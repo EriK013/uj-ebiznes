@@ -12,7 +12,7 @@ platformy Discord skierowane do aplikacji (bota)
 
 ❌ 5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack lub Messenger
 
-
 [Link do obrazu][6]
+
 [1]: https://github.com/EriK013/uj-ebiznes/commit/e41e00b430099d6aa0a16ee06549085c5ae37110
 [6]: https://hub.docker.com/repository/docker/estepien/uj-ebiznes/tags/zadanie3/sha256:647d720ec290cf0c60a301ae91fdbbf699a29d0259327921ae737427e46f7cc9
