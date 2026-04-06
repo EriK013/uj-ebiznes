@@ -1,0 +1,10 @@
+services:
+  ktor-app:
+    build: .
+    volumes: 
+      - .:/app       
+    environment: 
+      - DISCORD_WEBHOOK_URL= your_webhook_url_here
+    stdin_open: true 
+    tty: true
+  
