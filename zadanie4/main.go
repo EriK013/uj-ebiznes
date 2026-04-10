@@ -2,82 +2,75 @@ package main
 
 import (
 	"net/http"
-	"strconv"
-
+	"zadanie4/database"
+	"zadanie4/models"
 	"github.com/labstack/echo/v4"
 )
 
-type Product struct {
-	ID int `json:"id"`
-	Name string `json:"name"`
-}
-
-var products []Product
-var nextID int = 1
-
 func GetProducts(c echo.Context) error {
-    return c.JSON(http.StatusOK, products)
+	var products []models.Product
+	database.DB.Find(&products)
+	return c.JSON(http.StatusOK, products)
 }
 
 func GetProduct(c echo.Context) error {
-	id, err := strconv.Atoi(c.Param("id"))
-	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid product ID"})
+	id := c.Param("id")
+	var product models.Product
+
+	result := database.DB.First(&product, id)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
 	}
 
-	for _, product := range products {
-		if product.ID == id {
-			return c.JSON(http.StatusOK, product)
-		}
-	}
-	return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	return c.JSON(http.StatusOK, product)
 }
 
 
 func createProduct(c echo.Context) error {
-	var newProduct Product
+	var newProduct models.Product
 	if err := c.Bind(&newProduct); err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid request body"})
 	}
-	newProduct.ID = nextID
-	nextID++
-	products = append(products, newProduct)
+	database.DB.Create(&newProduct)
 	return c.JSON(http.StatusCreated, newProduct)
 }
 
 func updateProduct(c echo.Context) error {
-	id, err := strconv.Atoi(c.Param("id"))
-	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid product ID"})
+	id := c.Param("id")
+	var product models.Product
+
+	result := database.DB.First(&product, id)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
 	}
-	var updatedProduct Product
+
+	var updatedProduct models.Product
 	if err := c.Bind(&updatedProduct); err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid request body"})
 	}
-	for i, product := range products {
-		if product.ID == id {
-			products[i].Name = updatedProduct.Name
-			return c.JSON(http.StatusOK, products[i])
-		}
-	}
-	return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+
+	product.Name = updatedProduct.Name
+	database.DB.Save(&product)
+	return c.JSON(http.StatusOK, product)
 }
 
 func deleteProduct(c echo.Context) error {
-	id, err := strconv.Atoi(c.Param("id"))
-	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid product ID"})
+	id := c.Param("id")
+	var product models.Product
+
+	result := database.DB.First(&product, id)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
 	}
-	for i, product := range products {
-		if product.ID == id {
-			products = append(products[:i], products[i+1:]...)
-			return c.JSON(http.StatusOK, map[string]string{"message": "Product deleted"})
-		}
-	}
-	return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+
+	database.DB.Delete(&product)
+	return c.JSON(http.StatusOK, map[string]string{"message": "Product deleted"})
 }
+	
 
 func main(){
+	database.InitDB()
+	
 	e := echo.New()
 
 	e.GET("/products", GetProducts)
