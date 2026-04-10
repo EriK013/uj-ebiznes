@@ -3,7 +3,7 @@ Zadanie 5 Frontend
 ✅ 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
 Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w
 Produktach powinniśmy pobierać dane o produktach z aplikacji
-serwerowej;
+serwerowej; [Link do commita][1]
 
 ❌ 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
 
@@ -14,3 +14,5 @@ pomocą React hooks
 kliencką na dockerze via docker-compose
 
 ❌ 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+
+[1]: https://github.com/EriK013/uj-ebiznes/commit/75f9c40a25a9a3d32a98685ce82d6bf896ea5529
