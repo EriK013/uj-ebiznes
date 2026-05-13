@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Zadanie 6 - 20 przypadkow testowych (the-internet.herokuapp.com)', () => {
 
   it('Test 1: Strona glowna ladowanie', () => {
