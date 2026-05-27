@@ -10,4 +10,4 @@ Zadanie 8
 
 ❌ 5.0 zapisywanie danych logowania OAuth2 po stronie serwera
 
-[1] : https://github.com/EriK013/uj-ebiznes/commit/ce4ddcb9ad024ce3366f4fec9cf62d6f17975143
+[1]: https://github.com/EriK013/uj-ebiznes/commit/ce4ddcb9ad024ce3366f4fec9cf62d6f17975143
