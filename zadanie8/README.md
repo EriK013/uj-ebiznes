@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/3c4d4bfc-55dd-4029-a574-8058bd4fc2b7
+
 Zadanie 8
 
 ✅ 3.0 logowanie przez aplikację serwerową (bez OAuth2) [Link do commita 1][1]
