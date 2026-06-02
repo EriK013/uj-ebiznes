@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/fa7463e7-e446-4c5c-8b29-a0af1be693c4
+
 Zadanie 2 Scala
 
 ✅ 3.0 Należy stworzyć kontroler do Produktów [Link do commita 1][1]
