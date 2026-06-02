@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/f87c4c1e-f748-4cba-82d3-253ce4e5277e
+
 Zadanie 5 Frontend
 
 ✅ 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
