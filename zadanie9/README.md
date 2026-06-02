@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/9453e506-cce7-4485-9d05-1bb12d40fa23
+
 Zadanie 9
 
 ✅ 3.0 należy stworzyć po stronie serwerowej osobny serwis do łącznia z
