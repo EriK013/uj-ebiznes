@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/29290c50-34a2-46b7-834d-a6bca4369cb5
+
 Zadanie 6 Testy
 
 ✅ 3.0 Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium (Kotlin, Python, Java, JS, Go, Scala) [Link do commita][1] 
