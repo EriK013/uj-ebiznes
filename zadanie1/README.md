@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/d218fa7a-6603-4ccd-a8dc-c4bdb474b036
+
 Zadanie 1 Docker
 
 ✅ 3.0 obraz ubuntu z Pythonem w wersji 3.10 [link do commita 1][1]
